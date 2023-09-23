@@ -199,7 +199,7 @@ public class FluxAndMonoGeneratorService {
         .onErrorResume(
             ex -> {
               log.error("Exception is ", ex);
-              if (ex instanceof IllegalAccessException) {
+              if (ex instanceof IllegalStateException) {
                 return recoverFlux;
               } else {
                 return Flux.error(ex);
